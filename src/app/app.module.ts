@@ -6,10 +6,9 @@ import { NavbarComponent } from './common/layout/navbar/navbar.component';
 import { LeftsidebarComponent } from './common/layout/leftsidebar/leftsidebar.component';
 import { FooterComponent } from './common/layout/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
-import { authInterceptorProviders } from './core/helpers/auth.interceptor';
 import { NgModule , CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PersonasComponent } from './pages/personas/personas.component';
+import { PersonasComponent } from './pages/personajes/personas.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -24,6 +23,8 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatCardModule } from '@angular/material/card';
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { MatNativeDateModule } from '@angular/material/core';
+import { EstudiantesComponent } from './pages/estudiantes/estudiantes.component';
+import { ProfesoresComponent } from './pages/profesores/profesores.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     NavbarComponent,
     LeftsidebarComponent,
     FooterComponent,
-    PersonasComponent
+    PersonasComponent,
+    EstudiantesComponent,
+    ProfesoresComponent
   ],
   imports: [
     BrowserModule,
@@ -57,8 +60,7 @@ import { MatNativeDateModule } from '@angular/material/core';
   ],
   
   providers: [
-    //appRoutingProviders
-    authInterceptorProviders
+  
   ],
   bootstrap: [AppComponent]
 })
