@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { ClientService } from 'src/app/core/services/client.service';
+import { MatSort } from '@angular/material/sort';
 import * as moment from 'moment';
 
 //tabla personajes
@@ -26,12 +27,13 @@ export class PersonasComponent implements OnInit {
     displayedColumns: string[] = ['Codigo', 'Name', 'Patronus', 'Age', 'Image'];
     dataSource!: MatTableDataSource<PersonajesElement>;
     @ViewChild('paginatorPersonajes') paginatorPersonas!: MatPaginator;
+    @ViewChild(MatSort, { static: true }) sort!: MatSort;
+
     // fin tabla personajes
     PersonajesElement = [];
 
     listPersonajesElement : PersonajesElement [] = [];
  
-
     selectedHouse!: string;
     
     constructor(private clientService: ClientService) { }
@@ -74,7 +76,8 @@ export class PersonasComponent implements OnInit {
           console.log(this.listPersonajesElement);
 
           this.dataSource = new MatTableDataSource<PersonajesElement>(this.listPersonajesElement);
-          this.dataSource.paginator = this.paginatorPersonas;
+          this.dataSource.paginator = this.paginatorPersonas; // paginacion de la tabla
+          this.dataSource.sort = this.sort; // ordenamiento de los campos
         },
         err => {
         
