@@ -23,6 +23,7 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatCardModule } from '@angular/material/card';
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatSortModule } from '@angular/material/sort';
 import { EstudiantesComponent } from './pages/estudiantes/estudiantes.component';
 import { ProfesoresComponent } from './pages/profesores/profesores.component';
 
@@ -56,7 +57,8 @@ import { ProfesoresComponent } from './pages/profesores/profesores.component';
     MatButtonModule,
     MatCardModule,
     TextFieldModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSortModule
   ],
   
   providers: [
