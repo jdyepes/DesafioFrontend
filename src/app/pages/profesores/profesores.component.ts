@@ -2,6 +2,7 @@ import { Component, OnInit , ViewChild} from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { ClientService } from 'src/app/core/services/client.service';
+import { MatSort } from '@angular/material/sort';
 import * as moment from 'moment';
 
 //tabla profesores
@@ -22,15 +23,16 @@ export class ProfesoresElement {
 
 export class ProfesoresComponent implements OnInit {
 
-  // tabla personajes
+  // tabla profesores
   displayedColumns: string[] = ['Codigo', 'Name', 'Patronus', 'Age', 'Image'];
   dataSource!: MatTableDataSource<ProfesoresElement>;
-  @ViewChild('paginatorProfesores') paginatorPersonas!: MatPaginator;
-  // fin tabla personajes
+  @ViewChild('paginatorProfesores') paginatorProfesores!: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort!: MatSort;
+
+  // fin tabla profesores
   ProfesoresElement = [];
 
   listProfesoresElement : ProfesoresElement [] = [];
-
 
   selectedHouse!: string;
   
@@ -38,7 +40,6 @@ export class ProfesoresComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 
   // boton para consultar
   consultar(event: Event) : any{
@@ -68,7 +69,8 @@ export class ProfesoresComponent implements OnInit {
         console.log(this.listProfesoresElement);
 
         this.dataSource = new MatTableDataSource<ProfesoresElement>(this.listProfesoresElement);
-        this.dataSource.paginator = this.paginatorPersonas;
+        this.dataSource.paginator = this.paginatorProfesores;
+        this.dataSource.sort = this.sort; // ordenamiento de los campos
       },
       err => {
       
