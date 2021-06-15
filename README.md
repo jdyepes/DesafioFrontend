@@ -1,7 +1,43 @@
-# ProdeinWebApp
+# DesafioFrontEndWebApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
 
+#
+### Operaciones GET:
+#
+
+
+Operación    | Endpoint                    | Descripción
+-------------| ----------------------------|-----------------------------------------------------------
+ GET         | **/house/{nombreCasa}**     | Operación encargada de consultar todos los personajes con su respectiva casa 
+ GET         | **/students**               | Operación encargada de consultar todos los estudiantes
+ GET         | **/staff**                  | Operación encargada de consultar todos los profesores
+
+
+#
+## Pasos basicos para iniciar la app:
+
+```typescript
+Ejecutar los comandos en el siguiente orden 
+
+1. npm install
+2. ng serve
+
+```
+
+> Tener instalado node.js, angular >10.
+#
+
+## Realizado por:
+
+**Jesus Yepes**
+
+- [Perfil](https://github.com/jdyepes "Jesus Yepes")
+- [Repo](https://github.com/jdyepes/DesafioFrontend "Desafio Frontend Test Angular")
+- [Email](mailto:jesusyepes.1205@gmail.com?subject=FromGitHubProject "Hi!")
+
+#
+# Features
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
