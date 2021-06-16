@@ -26,6 +26,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSortModule } from '@angular/material/sort';
 import { EstudiantesComponent } from './pages/estudiantes/estudiantes.component';
 import { ProfesoresComponent } from './pages/profesores/profesores.component';
+import { FormularioEstudiantesComponent } from './pages/formulario-estudiantes/formulario-estudiantes.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ProfesoresComponent } from './pages/profesores/profesores.component';
     FooterComponent,
     PersonasComponent,
     EstudiantesComponent,
-    ProfesoresComponent
+    ProfesoresComponent,
+    FormularioEstudiantesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,56 @@
+<form [formGroup]="formularioEstudiante" (ngSubmit)="submit()">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="page-header">
+                <h1 class="pageheader-title">Estudiantes </h1>              
+                <div class="page-breadcrumb">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/home" class="breadcrumb-link">Home</a></li>
+                            <li class="breadcrumb-item"><a class="breadcrumb-link">Registrar</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Estudiantes</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+      </div>
+    <p>
+      <label class="col-form-label" >Name:</label>
+      <input type="text" class="form-control" formControlName="name" required>
+      <span class="col-form-label"  *ngIf="this.formularioEstudiante?.get('name')?.errors?.required">
+        (El name no puede quedar vacío)
+      </span>
+      <span class="col-form-label" *ngIf="this.formularioEstudiante?.get('name')?.errors?.maxlength">
+        (Debe tener como maximo 10 caracteres)
+      </span>
+    </p>
+    <p>
+      <label class="col-form-label" >Patronus:</label>
+      <input type="text" class="form-control" formControlName="patronus" required>
+      <span class="col-form-label" *ngIf="this.formularioEstudiante.get('patronus')?.errors?.required">
+        (El campo puede quedar vacío)
+      </span>
+      <span class="col-form-label" *ngIf="this.formularioEstudiante?.get('patronus')?.errors?.maxlength">
+        (Debe tener como maximo 10 caracteres)
+      </span>
+    </p>
+    <p>
+        <label class="col-form-label" >Age:</label>
+        <input type="number" class="form-control" formControlName="age" required>
+        <span class="col-form-label" *ngIf="this.formularioEstudiante.get('age')?.errors?.required">
+          (El campo no puede quedar vacío)
+        </span>
+        <span class="col-form-label" *ngIf="this.formularioEstudiante?.get('age')?.errors?.maxlength">
+            (Debe tener como maximo 2 caracteres)
+          </span>
+    </p>
+    <br>
+    <button class="btn btn-primary btn-lg btn-block" type="submit">Registrar</button>
+  </form>
+  <br>
+  <div>
+      <p style="color:red;">
+        {{resultado}}
+      </p>       
+  </div>

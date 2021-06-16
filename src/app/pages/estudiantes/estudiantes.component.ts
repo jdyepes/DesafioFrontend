@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ClientService } from 'src/app/core/services/client.service';
 import { MatSort } from '@angular/material/sort';
 import * as moment from 'moment';
+import { Router } from '@angular/router';
 
 //tabla estudiantes
 export class EstudiantesElement {
@@ -14,7 +15,6 @@ export class EstudiantesElement {
   Image!: string;
 }
 
-
 @Component({
   selector: 'app-estudiantes',
   templateUrl: './estudiantes.component.html',
@@ -22,20 +22,21 @@ export class EstudiantesElement {
 })
 export class EstudiantesComponent implements OnInit {
 
-  // tabla profesores
+  // tabla estudiantes
   displayedColumns: string[] = ['Codigo', 'Name', 'Patronus', 'Age', 'Image'];
   dataSource!: MatTableDataSource<EstudiantesElement>;
   @ViewChild('paginatorEstudiantes') paginatorEstudiantes!: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort!: MatSort;
 
-  // fin tabla profesores
+  // fin tabla estudiantes
   EstudiantesElement = [];
 
   listEstudiantesElement : EstudiantesElement [] = [];
 
   selectedHouse!: string;
 
-  constructor(private clientService: ClientService) { }
+  constructor(private clientService: ClientService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -81,7 +82,8 @@ export class EstudiantesComponent implements OnInit {
 
   // todo
   agregar(event: Event) : any{
-    window.alert('En proceso');
+  //    window.alert('En proceso');
+    this.router.navigateByUrl('/FormularioEstudiante');
   }
 
 }
