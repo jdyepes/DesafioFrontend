@@ -39,10 +39,11 @@ export class ProfesoresComponent implements OnInit {
   constructor(private clientService: ClientService) { }
 
   ngOnInit(): void {
+    this.consultar();
   }
 
   // boton para consultar
-  consultar(event: Event) : any{
+  consultar() : any{
     console.log('data', event);
     
     this.clientService.getStaft().subscribe(
