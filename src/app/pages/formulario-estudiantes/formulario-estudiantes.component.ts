@@ -35,11 +35,13 @@ export class FormularioEstudiantesComponent implements OnInit {
   submit() {
     if (this.formularioEstudiante.valid){
       this.addStudent();
-      this.resultado = "Todos los datos son válidos";
+      this.resultado = "Todos los datos son válidos";  
       
     }      
     else
       this.resultado = "Hay datos inválidos en el formulario";
+
+      window.alert(this.resultado);
   }
 
   addStudent(){
@@ -54,25 +56,21 @@ export class FormularioEstudiantesComponent implements OnInit {
 
     var retrievedObject = this.getData();
 
-    if(retrievedObject != null &&  this.listEstudiantesElement == []) { // si tiene data guardada      
-        this.listEstudiantesElement.push(JSON.parse(retrievedObject));
-    }
     this.setData(this.listEstudiantesElement);
     
     console.log(this.listEstudiantesElement);
-
   
     console.log('myData: ', JSON.parse(retrievedObject || '{}'));   
   }
   
   // Manejo de variables de sesion
   setData(data:any) {
-    const jsonData = JSON.stringify(data)
-    localStorage.setItem('myData', jsonData)
+    const jsonData = JSON.stringify(data);
+    localStorage.setItem('myData', jsonData);
  }
  
  getData() {
-    return localStorage.getItem('myData')
+    return localStorage.getItem('myData');
  }
 
 

@@ -37,7 +37,7 @@
     </p>
     <p>
         <label class="col-form-label" >Age:</label>
-        <input type="number" class="form-control" formControlName="age" required>
+        <input type="number" class="form-control" formControlName="age" required maxlength="2">
         <span class="col-form-label" *ngIf="this.formularioEstudiante.get('age')?.errors?.required">
           (El campo no puede quedar vacío)
         </span>
