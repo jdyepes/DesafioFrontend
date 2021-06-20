@@ -27,6 +27,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { EstudiantesComponent } from './pages/estudiantes/estudiantes.component';
 import { ProfesoresComponent } from './pages/profesores/profesores.component';
 import { FormularioEstudiantesComponent } from './pages/formulario-estudiantes/formulario-estudiantes.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { FormularioEstudiantesComponent } from './pages/formulario-estudiantes/f
     MatCardModule,
     TextFieldModule,
     MatNativeDateModule,
-    MatSortModule
+    MatSortModule,
+    MatProgressSpinnerModule
   ],
   
   providers: [
